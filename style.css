@@ -5,15 +5,27 @@
     font-family: 'Poltawski Nowy', serif;
 }
 
- 
-
 .top-level-container{
-    width: 80%; 
+    width: 100%; 
     margin: auto;
-    height: 15vh;
+    height: 80px;
     display: flex;
     flex-direction: row;
     padding: 15px;
+    position: relative;
+    transition: .3s;
+}
+
+.top-level-container-scroll{
+    width: 100%;
+    background-color: #fff; 
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    position: fixed;
+    top:0;
+    z-index: 100;
 }
 
 .hr{
@@ -24,32 +36,56 @@
 
 .menu{
     display: flex;
-    flex-direction: column;
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
-    margin-left: 25px;
-    
+    margin-left: 25px; 
 }
-
- 
 
 .main-menu{
     width: 100%;
+    height: 100%;
     display: flex; 
     flex-direction: row;
     justify-content: left;
-    align-items: left;
-    column-gap: 20px;
-    border: 1px solid red;
+    align-items: center;
+    column-gap: 60px;
+    padding: 12px;
+}
+
+.search-box{
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+
+.search-box img{
+    width: 35px;
+    height: 35px;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+#search-bar{
+    width: 400px;
+    height: 50px;
+    font-size: 25px;
 }
 
 .main-menu li{
+    height: 100%;
     list-style-type: none;
     text-decoration: none;
-    font-size: 25px; 
- 
+    font-size: 28px; 
+    cursor: pointer;
+    transition: .3s;
+}
+
+.main-menu li:hover{
+    color: #3399ff;;
 }
 
 .sub-menu{
@@ -60,29 +96,6 @@
     justify-content: center;
     align-items: left;
     column-gap: 20px;
-}
-
-#search-form{
-    width: 300px;
-    height: 44px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#search-form::placeholder {
-    color: #fff;
-    opacity: 0.7; 
-}
-
-#search-input{
-    all: unset;
-    font: 16px system-ui;
-    color: #fff;
-    height: 100%;
-    width: 100%;
-    padding: 6px 10px;
 }
 
 #logo{
@@ -100,14 +113,19 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;  
 }
 
 .hero{
     height: auto;
     object-fit: cover;
     position: absolute;
+}
+
+.hero-static{
+    height: 100%;
+    width: 100%;
+ 
 }
 
 #hero0{
@@ -121,7 +139,6 @@
     z-index: 10;
     bottom:0;
     left:0;
-   
 }
 
 #hero2{
@@ -160,6 +177,49 @@
     left: 0;
 }
 
+.hero-info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    gap: 20px;
+}
+
+.hero-info #hero-title{
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.hero-info #post-title{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-info #hero-text{
+    font-size: 1.2rem;
+    width: 50%;
+}
+
+.hero-info #hero-reg{
+    width: 200px;
+    font-size: 1.8rem;
+    border: 1px solid #0c0c0c;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.hero-info #hero-reg:hover{
+    background-color: rgba(255, 255, 255, .6);
+}
+
+
+
 .main-content{
     width: 90%;
     height: auto; 
@@ -192,7 +252,7 @@
 
 .col-half-image{
     max-height: 400px;
-    height: 50%;
+    height: 100%;
 }
 
 .col-md-6 .item-info{
@@ -208,6 +268,8 @@
     font-size: 2.5rem;
     text-align: left;
 }
+
+ 
 
 .col-md-6 .item-info #button{
     font-size: 2rem;
@@ -233,6 +295,7 @@
     flex-direction: row;
     justify-content: left;
     align-items: left;
+    flex-wrap: wrap;
     margin-left: 40px;
     gap: 80px;
 }
@@ -251,4 +314,15 @@
     color: #3399ff;
 }
 
+.foot-container p{
+    color:#fff;
+    text-align: center;
+}
+
  
+@media only screen and (max-width: 900px) {
+    
+    .hero-container{
+        height: 50vh;
+    }
+}
