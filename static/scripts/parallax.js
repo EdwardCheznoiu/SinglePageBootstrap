@@ -24,7 +24,7 @@ window.addEventListener("resize", function(e){
     }
     if(width < 900){
         let hero_static = document.querySelector(".hero-static");
-        console.log(hero_static.src);
+        hero_static.classList.add("hero-info");
         hero_static.src="static/imgs/hero parallax_2/hero section-6.png"
     }
 });
