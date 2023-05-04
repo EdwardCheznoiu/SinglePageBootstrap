@@ -1,5 +1,5 @@
 <html>
-
+<!--Zona de head unde vom incarca toate fisierele css, font-uri, boostrap-->
 <head>
     <title>Learn Cube - Best way of learning</title>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!--Bara de navigare ce contine logo, meniu si bara de cautare-->
     <div class="top-level-container">
         <div class="logo"><img src="static/imgs/logo/LearnCube.png"></div>
         <div class="menu">
@@ -45,7 +46,7 @@
         </div>
 
     </div>
-
+    <!--Zona de continut pentru a crea efectul parallax-->
     <div id="home" class="hero-container">
         <img class="hero" id="hero0" src="static/imgs/hero parallax_1/Rectangle 53.png">
         <img class="hero" id="hero1" src="static/imgs/hero parallax_1/Vector-1.png">
@@ -66,9 +67,14 @@
     </div>
 
 
-
+    <!--Zona de continut principala unde se vor afisa toate detalile evenimentului unde se foloseste Bootstrap
+    Elemente folosite: 
+        - Containers - elemente de baza pentru folosirea sistemului de grid oferit de Bootstrap
+        - row - defineste un nou rand 
+        - col - defineste o coloana 
+    -->
     <div class="main-content">
-        <div class="container-lg">
+        <div class="container-lg"> 
             <div class="row">
                 <div class="item">
                     <div class="col-md-6 col-image">
@@ -125,6 +131,7 @@
             </div>
         </div>
 
+         <!--Zona de continut principala unde se va afisa echipa - S-a folosit tot sistemul de grid oferit de Boostrap, plus card-uri  -->
         <div id="team" class="text-title">Meet the team</div>
         <div class="container">
             <div class="row">
@@ -160,7 +167,9 @@
                 </div>
             </div>
         </div>
-
+        <!--Zona de contact un se afiseaza informatii legate de locatie si un formular de contact
+        La apasarea butonului Submit se va accesa un fisier php ce ne ajuta sa salvam in baza de date informatile oferite de user
+         -->
         <div id="contact" class="text-title">Contact Us</div>
         <div class="container">
             <div class="col-md-6">
@@ -183,6 +192,21 @@
                             <button class="btn btn-primary btn-lg" type="submit">Submit</button>
                         </div>
                     </form>
+
+                <!--Mesaj de informare ce va fi populat dupa apsarea botonului Subimit
+                    -->
+        
+            <?php 
+                if(array_key_exists('message', $_GET)){
+                    ?>
+                    <div class="popup-message">
+                        <?php
+                        $msg = $_GET['message']; 
+                        echo $msg;?>
+                        <div class="disposable">x</div>
+                     </div><?php
+                }
+            ?>
                 </div>
             </div>
             <div class="col-md-6">
@@ -192,16 +216,7 @@
                             href="https://www.maps.ie/distance-area-calculator.html">distance maps</a></iframe></div>
             </div>
         </div>
-
-        <div class="popup-message">
-            <?php 
-                if(array_key_exists('message', $_GET)){
-                    $msg = $_GET['message']; 
-                    echo $msg;
-                }
-            ?>
-            <div class="disposable">x</div>
-        </div>
+            
     </div>
             
     </div>

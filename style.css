@@ -1,3 +1,4 @@
+/*Selectorul '*' selecteaza toate elementele HTML */
 * {
     padding: 0;
     margin: 0;
@@ -5,6 +6,7 @@
     font-family: 'Poltawski Nowy', serif;
 }
 
+/*Bara de navigare cu logo, meniu si bara de cautare */
 .top-level-container {
     width: 100%;
     margin: auto;
@@ -16,6 +18,7 @@
     transition: .3s;
 }
 
+/*Clasa ce va fi aplicata atunci cand se va da scroll in pagina*/
 .top-level-container-scroll {
     width: 100%;
     background-color: #fff;
@@ -26,8 +29,10 @@
     position: fixed;
     top: 0;
     z-index: 100;
+    border-bottom: 2px solid #0073e6;
 }
 
+/*Clasa ce va fi aplicata atunci cand dimensiunea ecranului este mai mica de 1530px */
 .top-level-container-active {
     width: 100%;
     height: 100%;
@@ -37,12 +42,7 @@
     transition: .3s;
 }
 
-.hr {
-    width: 100%;
-    height: 2px;
-    background-color: #e6e6e6;
-}
-
+/*Selector meniu */
 .menu {
     display: flex;
     width: 100%;
@@ -52,17 +52,19 @@
     margin-left: 25px;
 }
 
+/*Pozitionarea elementelor din meniu, pe rand, incepand de la stanga cu distanta intre elemente de 60 de px*/
 .main-menu {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     column-gap: 60px;
-    padding: 12px;
+    padding: 14px;
 }
 
+/*Selector bara cautare */
 .search-box {
     display: flex;
     flex-direction: row;
@@ -95,6 +97,7 @@
     font-size: 25px;
 }
 
+/*Stilizarea elementelor din meniu*/
 .main-menu li {
     height: 100%;
     list-style-type: none;
@@ -104,9 +107,9 @@
     transition: .3s;
 }
 
+
 .main-menu li:hover {
     color: #3399ff;
-    ;
 }
 
 .main-menu a {
@@ -145,6 +148,7 @@
     left: 2%;
 }
 
+/*Bare de meniu ce vor fi afisate cand dimensiunea ecranului este mai mica sau egala cu 1530 de px */
 .fa-bars {
     width: 70px;
     height: 70px;
@@ -165,11 +169,11 @@
 }
 
 
-
+/*Zona de continut undeva se vor pune imaginile pentru a crea efectul parallax */
 .hero-container {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 80vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -280,7 +284,7 @@
 }
 
 
-
+/*Zona de continut principala din pagina*/
 .main-content {
     width: 90%;
     height: auto;
@@ -329,8 +333,6 @@
     font-size: 2.5rem;
     text-align: left;
 }
-
-
 
 .col-md-6 .item-info #button {
     font-size: 2rem;
@@ -392,13 +394,13 @@
 }
 
 .popup-message {
-    width: 80%;
+    width: 100%;
     height: auto;
-    margin: auto;
+    position: relative;
     font-size: 25px;
     font-weight: bold;
-    position: fixed;
-    top: 45%;
+    text-align: center;
+    margin-top: 10px;
     background-color: #009933;
     color: #fff;
     padding-left: 20px;

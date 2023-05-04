@@ -37,6 +37,8 @@ window.addEventListener("resize", function (e)
 
 window.addEventListener("load", function (e)
 {
+    let scroll_id = document.getElementById('scroll-here');
+    scroll_id.scrollIntoView({ behavior: 'smooth' }, true);
     const width = window.innerWidth;
     if (width < 1400)
     {
@@ -46,7 +48,6 @@ window.addEventListener("load", function (e)
     if (width < 900)
     {
         let hero_static = document.querySelector(".hero-static");
-        console.log(hero_static.src);
         hero_static.src = "static/imgs/hero parallax_2/hero section-6.png"
     }
 });
@@ -57,7 +58,6 @@ window.addEventListener("scroll", function (e)
     const height = window.innerHeight;
     let top_container = document.querySelector(".top-level-container");
     let wasChanged = false;
-    console.log(window.scrollY);
     if (((window.scrollY) >= height * 0.2) && wasChanged == false)
     {
         top_container.classList.remove(".top-level-container");

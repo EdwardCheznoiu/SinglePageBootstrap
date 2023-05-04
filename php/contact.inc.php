@@ -4,16 +4,12 @@ $name = $_POST["name"];
 $email = $_POST["emailAddress"];
 $message = $_POST["message"];
 
-if(!$conn){
-    header("Location: ../index.php?message=Can't connect to db!");
-}
-
 if(empty($name) || empty($message)){
-    header("Location: ../index.php?message=All fields are required!");
+    header("Location: ../index.php?message=All fields are required!");  
 }
 else{
-    $sql = "INSERT INTO contact (message_name, email, message_msg) VALUES (?, ?, ?)";
-    $stmt = mysqli_stmt_init($conn);
+    $sql = "INSERT INTO contact (message_name, email, message_msg) VALUES (?, ?, ?)";   
+    $stmt = mysqli_stmt_init($conn); 
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("Location: ../index.php?message=Something went wrong with the message registration!");
     }
